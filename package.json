@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "node-sass inc/styles/scss/_style-default.scss inc/styles/css/style.css"
   },
   "author": "Milos Bogdanovic",
   "license": "ISC",

@@ -1,0 +1,47 @@
+@mixin mq($val, $size) {
+
+  @if $val == min {
+    @media only screen and (min-width:$size + 'px') { @content; }
+  }
+
+  @if $val == max {
+    @media only screen and (max-width:$size + 'px') { @content; }
+  }
+
+}
+
+@mixin menu-items {
+
+  &.home {
+    &:hover,
+    &:active,
+    &:focus {
+      color: $wm-yellow;
+    }
+  }
+
+  &.about {
+    &:hover,
+    &:active,
+    &:focus {
+      color: $wm-green;
+    }
+  }
+
+  &.work {
+    &:hover,
+    &:active,
+    &:focus {
+      color: $wm-midblue;
+    }
+  }
+
+  &.contact {
+    &:hover,
+    &:active,
+    &:focus {
+      color: $wm-blue;
+    }
+  }
+  
+}
