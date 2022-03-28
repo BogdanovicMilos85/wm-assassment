@@ -19,9 +19,15 @@
   }
 
   .header-inner {
+    padding: 0 25px;
 
     .search-icon {
       float: right;
+      margin-left: 35px;
+
+      @media only screen and (max-width: 680px) {
+        margin-left: 0;
+      }
     }
 
     #search-input {
@@ -166,15 +172,25 @@
         h2 {
             position: relative;
             text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
         }
 
         .swiper-button-next, 
         .swiper-button-prev {
             width: 20px;
             height: 20px;
-            background-size: 20px 20px;
+            background-size: contain;
             margin-top: -10px;
         }
+
+        .swiper-button-prev {
+          background-image:url('/inc/images/icon--arrow-left.png');
+        }
+
+        .swiper-button-next {
+          background-image:url('/inc/images/icon--arrow-right.png');
+        }    
     }
 }
 
@@ -203,6 +219,10 @@
 
     img {
         width: 100%;
+    }
+
+    .swiper-pagination {
+      bottom: 45px;
     }
 }
 
@@ -411,15 +431,25 @@
 footer {
   background-color: #dbdbdb;
   margin-top: 40px;
+  padding: 10px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   .social-icons {
-    padding: 15px;
-    padding-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     a {
+      display: inline-flex;
+      padding: 0;
+      line-height: 1;
+      margin-right: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
 
       .icon {
         display: inline-block;
@@ -466,6 +496,10 @@ footer {
   }
 
   .footer-menu {
+
+    @media screen and (max-width: 480px) {
+      display: none;
+    }
     
     .menu-link {
       font-size: 14px;
@@ -480,12 +514,23 @@ footer {
       }
     }
   }
-  
+
   .footer-back--to-top {
-    padding: 15px;
+
+    .footer-icon-link--icon-to-top {
+      display: inline-block;
+      position: fixed;
+      right: 25px;
+      bottom: -100px;
+
+      &.down {
+        bottom: 5px;
+      }
+    }
 
     .top-icon {
       display: inline-block;
+      vertical-align: middle;
       width: 40px;
       height: 40px;
       cursor: pointer;
